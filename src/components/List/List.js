@@ -6,10 +6,12 @@ import Column from "../Column/Column";
 import {settings} from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
 import Creator from '../Creator/Creator';
+import Card from '../Card/Card';
 
 class List extends React.Component {
   state = {
     columns: this.props.columns || [],
+    cards: this.props.cards || [],
   };
 
   static propTypes = {
@@ -17,6 +19,7 @@ class List extends React.Component {
     image: PropTypes.string.isRequired,
     description: PropTypes.node.isRequired,
     columns: PropTypes.array.isRequired,
+    
   };
 
   static defaultProps = {
