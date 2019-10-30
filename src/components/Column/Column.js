@@ -8,19 +8,19 @@ import Icon from '../Icon/Icon';
 class Column extends React.Component {
     static propTypes = {
         title: PropTypes.string.isRequired,
-        cards: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
+        cards: PropTypes.array.isRequired,
+        icon: PropTypes.node.isRequired,
     };
 
     render() {
         return (
             <section className={styles.component}>
-                <h3 className={styles.cards}>
+                <h3 className={styles.cards}>{this.props.title}
                     <span className={styles.icon}>
-                        <Icon className={styles.columns}/>
+                      <Icon name={this.props.name}/>
                     </span>
-                    {this.props.title}
                 </h3>
+              
                 <div className={styles.creator}>
                     <Creator text={settings.cardCreatorText} action={cards => this.addCard(cards)}/>
                  </div>
