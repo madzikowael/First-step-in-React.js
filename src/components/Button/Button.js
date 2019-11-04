@@ -1,10 +1,8 @@
 import React from 'react';
 import styles from './Button.scss';
+import PropTypes from 'prop-types';
 
-Button.propTypes = {
-  // eslint-disable-next-line no-undef
-  variant: PropTypes.node.isRequired,
-};
+
 
 const Button = ({variant = '', ...otherProps}) => (
   <button 
@@ -16,5 +14,8 @@ const Button = ({variant = '', ...otherProps}) => (
 // static propTypes = {
 //   variant: PropTypes.string,
 // }
+Button.propTypes = {
+  variant: PropTypes.string.isRequired,
+};
 
 export default Button;

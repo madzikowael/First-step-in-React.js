@@ -1,12 +1,10 @@
 import React from 'react';
-
-Icon.propTypes = {
-  // eslint-disable-next-line no-undef
-  name: PropTypes.node.isRequired,
-};
+import PropTypes from 'prop-types';
 
 const Icon = props => (<i className={`fas fa-${props.name}`}></i>);
 
-
+Icon.propTypes = {
+  name: PropTypes.node.isRequired,
+};
 
 export default Icon;
