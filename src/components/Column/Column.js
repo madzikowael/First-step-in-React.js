@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 // import {settings} from '../../data/dataStore';
 import Icon from '../Icon/Icon';
 import Card from '../Card/Card';
+import { settings } from 'cluster';
 
 class Column extends React.Component {
   // state = {
@@ -16,6 +17,10 @@ class Column extends React.Component {
       title: PropTypes.string.isRequired,
       cards: PropTypes.array.isRequired,
       icon: PropTypes.string.isRequired,
+    };
+
+    static defaultProps = {
+      icon: settings.defaultColumnIcon,
     };
 
     render() {
