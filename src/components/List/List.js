@@ -20,7 +20,7 @@ class List extends React.Component {
   };
 
   static defaultProps = {
-    // children: <p>I can do all the things!!!</p>
+    // children: <p>I can do all the things!!!!</p>
     description: settings.defaultListDescription,
   };
 
