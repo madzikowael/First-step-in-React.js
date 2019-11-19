@@ -1,11 +1,10 @@
 import React from 'react';
 import styles from './Container.scss';
 import PropTypes from 'prop-types';
-import ReactHtmlParser from 'react-html-parser';
 
 const Container = (props) => (
   <div className={styles.component}>
-    {ReactHtmlParser(props.children)}
+    {props.children}
   </div>
 );
 
