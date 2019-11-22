@@ -4,9 +4,10 @@ import Info from '../Info/Info';
 import {BrowserRouter, Route} from 'react-router-dom';
 import MainLayout from '../MainLayout/MainLayout';
 import FAQ from '../FAQ/FAQ';
-import { AnimatedSwitch } from 'react-router-transition';
+import { AnimatedSwitch } from 'react-html-parser';
 import styles from '../App/App';
 import List from '../List/ListContainer';
+import Search from '../Search/Search';
 
 const App = () => (
   <BrowserRouter>
@@ -21,6 +22,7 @@ const App = () => (
         <Route exact path='/info' component={Info} />
         <Route exact path='/FAQ' component={FAQ} />
         <Route exact path="/list/:id" component={List} />
+        <Route exact path='/search/...' component={Search} />
       </AnimatedSwitch>
     </MainLayout>
   </BrowserRouter>
