@@ -5,14 +5,12 @@ import {settings} from '../../data/dataStore';
 import styles from '../Info/Info';
 
 
-const Info = () => (
+const Info = (props) => (
   <Container>
     <div className={styles.component}>
-      <h2>{settings.info.title}</h2>
+      <h2 className={styles.title}>{settings.info.title}</h2>
     </div>
-    <div className={styles.image}>
-      {settings.info.image}
-    </div>
+    <img className={styles.image} src={settings.info.image}></img>
     <div>
       {settings.info.description}
     </div>
@@ -21,8 +19,7 @@ const Info = () => (
 );
 
 // Info.propTypes = {
-//   titleText: PropTypes.node.isRequired,
-//   image: PropTypes.string,
+//   imageUrl: PropTypes.string,
 // };
 
 
