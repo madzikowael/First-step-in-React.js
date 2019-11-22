@@ -92,6 +92,18 @@ const lists = [
     description: 'Interesting things I want to check out!',
     image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
   },
+  {
+    id: 'plane-1',
+    title: 'Nothing is possible',
+    description: 'Everything is a illusion, time to start flying by a plane',
+    image: 'https://cdn.pixabay.com/photo/2017/09/28/13/38/aircraft-2795557__340.jpg',
+  },
+  {
+    id: 'car-1',
+    title: 'Speed is a power',
+    description: 'Cars are the most important machine in the worldwide',
+    image: 'https://cdn.pixabay.com/photo/2018/12/09/12/19/corvette-3864797_960_720.jpg',
+  },
 ];
 
 const columns = [
