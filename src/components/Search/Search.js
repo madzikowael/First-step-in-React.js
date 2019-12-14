@@ -14,9 +14,14 @@ class Search extends React.Component {
     changeSearchString: PropTypes.func,
     countVisible: PropTypes.number,
     countAll: PropTypes.number,
-    history: PropTypes.string,
-    
+    history: PropTypes.object,
+
   }
+
+  // componentDidMount() {
+  //     console.log(settings)
+  //     debugger;
+  // }
 
   static defaultProps = {
     text: settings.search.defaultText,
@@ -54,7 +59,7 @@ class Search extends React.Component {
           <input
             type='text'
             placeholder={text}
-            value={value}
+            defaultValue={value}
             onChange={event => this.handleChange(event)}
           />
           <div className={styles.buttons}>

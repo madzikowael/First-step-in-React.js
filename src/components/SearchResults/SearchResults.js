@@ -1,39 +1,33 @@
 import React from 'react';
-import styles from './Column.scss';
+import Container from '../Container/Container';
 import PropTypes from 'prop-types';
-// import Creator from '../Creator/Creator';
-// import {settings} from '../../data/dataStore';
-// import Icon from '../Icon/Icon';
-// import Card from '../Card/Card';
-// import { settings } from '../../data/dataStore';
-import Search from '../Search/Search';
+import ReactHtmlParser from 'react-html-parser';
+import styles from './SearchResults.scss';
 
 class SearchResults extends React.Component {
- 
-    static propTypes = {
-      value: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      card: PropTypes.array.isRequired,
-      column: PropTypes.array.isRequired,
-      // cards: PropTypes.array.isRequired,
-    };
 
-    // static defaultProps = {
-    //   icon: settings.defaultColumnIcon,
-    // };
+  render() {
+    const {cards} = this.props;
 
-    render() {
-      const { value, title, card, column } = this.props;
-
-      return (
+    return (
+      <Container>
         <section className={styles.component}>
-          <Search>
-            {value}{title}{card}{column}
-          </Search>
+          <div>
+            {cards.map(cardData => {
+              const column = this.props.columns.find(column =>column.id==cardData.columnId);
+              const list = this.props.lists.find(list => list.id==column.listId );
+              return <article  className={styles.cards} key={cardData.id}>title: {cardData.title} {<br />} column: {column.title} {<br />} article: {ReactHtmlParser(list.title)}</article>;
+            })}
+          </div>
         </section>
-      );
-    }
-
+      </Container>
+    );
+  }
+  static propTypes = {
+    cards: PropTypes.array,
+    columns: PropTypes.array,
+    lists: PropTypes.array,
+  };
 }
 
 export default SearchResults;
